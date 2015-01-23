@@ -1,0 +1,312 @@
+\hypertarget{gol_8h}{\section{src/gol.h File Reference}
+\label{gol_8h}\index{src/gol.\+h@{src/gol.\+h}}
+}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}bitvector.\+h\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmap}{map}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gol_8h_a75a923d5b592185d56c0171174ddf9fa}{C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y}~-\/1
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{gol_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction} \{ \\*
+{\bfseries N}, 
+{\bfseries N\+E}, 
+{\bfseries E}, 
+{\bfseries S\+E}, 
+\\*
+{\bfseries S}, 
+{\bfseries S\+V}, 
+{\bfseries V}, 
+{\bfseries N\+V}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structmap}{map} $\ast$ \hyperlink{gol_8h_ad4e9f6227be3baaba4be7bb72010e0f1}{create\+\_\+map} (size\+\_\+t lines, size\+\_\+t columns)
+\item 
+void \hyperlink{gol_8h_ab8f483697eadd23cf978dc414e160fc2}{free\+\_\+map} (struct \hyperlink{structmap}{map} $\ast$$\ast$m)
+\item 
+\hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{gol_8h_a6b48c28e4bb20242a2e584575b133e54}{get\+\_\+value} (struct \hyperlink{structmap}{map} $\ast$m, size\+\_\+t line, size\+\_\+t column)
+\item 
+void \hyperlink{gol_8h_a69c5a3cc501b0d062024072bf6ff8071}{set\+\_\+value} (struct \hyperlink{structmap}{map} $\ast$m, size\+\_\+t line, size\+\_\+t column, \hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} value)
+\item 
+\hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{gol_8h_a967e585805bb0633d0f5d8ae6ecdaf1d}{check\+\_\+index} (struct \hyperlink{structmap}{map} $\ast$m, size\+\_\+t line, size\+\_\+t column)
+\item 
+\hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{gol_8h_a60a2f24bfedcd1e76054ff020f9abdec}{get\+\_\+neighbour} (struct \hyperlink{structmap}{map} $\ast$m, size\+\_\+t line, size\+\_\+t column, enum \hyperlink{gol_8h_a99f26e6ee9fcd62f75203b5402df8098}{direction} d, char mode, char $\ast$error)
+\item 
+int \hyperlink{gol_8h_a1050aca280b8017e37f10dbe85860d8e}{get\+\_\+alive\+\_\+neighbours} (struct \hyperlink{structmap}{map} $\ast$m, size\+\_\+t line, size\+\_\+t column, char mode)
+\item 
+void \hyperlink{gol_8h_ade45ee09e3be27670a7e022feeee4227}{do\+\_\+cycle} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structmap}{map} $\ast$copy, char mode)
+\item 
+void \hyperlink{gol_8h_a83e5f65006cb0c484b715a0958a9e71d}{simulate} (struct \hyperlink{structmap}{map} $\ast$\hyperlink{structmap}{map}, struct \hyperlink{structmap}{map} $\ast$copy, size\+\_\+t cycles, char mode)
+\item 
+\hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{gol_8h_aa877fe183d5d6b1649f781a4061275fd}{lives} (struct \hyperlink{structmap}{map} $\ast$m, size\+\_\+t line, size\+\_\+t column, char $\ast$error, char mode)
+\item 
+void \hyperlink{gol_8h_af3e151e64fd4fff73d3520dc6935c2e1}{read\+\_\+map} (struct \hyperlink{structmap}{map} $\ast$m)
+\item 
+void \hyperlink{gol_8h_a496bcbd87542872bcf8e08640f746ac5}{print\+\_\+map} (struct \hyperlink{structmap}{map} $\ast$m)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all the necessary function declarations to simulate Conway's Game of life. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{gol_8h_a75a923d5b592185d56c0171174ddf9fa}{\index{gol.\+h@{gol.\+h}!C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y@{C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y}}
+\index{C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y@{C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y}!gol.\+h@{gol.\+h}}
+\subsubsection[{C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+G\+O\+L\+\_\+\+N\+O\+\_\+\+M\+E\+M\+O\+R\+Y~-\/1}}\label{gol_8h_a75a923d5b592185d56c0171174ddf9fa}
+error code when there isn't enough memory to allocate a map. 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{gol_8h_a99f26e6ee9fcd62f75203b5402df8098}{\index{gol.\+h@{gol.\+h}!direction@{direction}}
+\index{direction@{direction}!gol.\+h@{gol.\+h}}
+\subsubsection[{direction}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf direction}}}\label{gol_8h_a99f26e6ee9fcd62f75203b5402df8098}
+Used to identify easier a neighbour 
+
+\subsection{Function Documentation}
+\hypertarget{gol_8h_a967e585805bb0633d0f5d8ae6ecdaf1d}{\index{gol.\+h@{gol.\+h}!check\+\_\+index@{check\+\_\+index}}
+\index{check\+\_\+index@{check\+\_\+index}!gol.\+h@{gol.\+h}}
+\subsubsection[{check\+\_\+index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} check\+\_\+index (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m, }
+\item[{size\+\_\+t}]{line, }
+\item[{size\+\_\+t}]{column}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a967e585805bb0633d0f5d8ae6ecdaf1d}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. \\
+\hline
+{\em line} & the line of the cell. \\
+\hline
+{\em column} & the column of the cell. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it is a valid index, false otherwise. Checks if the index isn't out of bounds. 
+\end{DoxyReturn}
+\hypertarget{gol_8h_ad4e9f6227be3baaba4be7bb72010e0f1}{\index{gol.\+h@{gol.\+h}!create\+\_\+map@{create\+\_\+map}}
+\index{create\+\_\+map@{create\+\_\+map}!gol.\+h@{gol.\+h}}
+\subsubsection[{create\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf map}$\ast$ create\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{lines, }
+\item[{size\+\_\+t}]{columns}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_ad4e9f6227be3baaba4be7bb72010e0f1}
+
+\begin{DoxyParams}{Parameters}
+{\em lines} & the number of lines \\
+\hline
+{\em columns} & the number of columns \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct map$\ast$ variable containing the map 
+\end{DoxyReturn}
+\hypertarget{gol_8h_ade45ee09e3be27670a7e022feeee4227}{\index{gol.\+h@{gol.\+h}!do\+\_\+cycle@{do\+\_\+cycle}}
+\index{do\+\_\+cycle@{do\+\_\+cycle}!gol.\+h@{gol.\+h}}
+\subsubsection[{do\+\_\+cycle}]{\setlength{\rightskip}{0pt plus 5cm}void do\+\_\+cycle (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf map} $\ast$}]{copy, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_ade45ee09e3be27670a7e022feeee4227}
+Updates the map after a cycle. 
+\begin{DoxyParams}{Parameters}
+{\em map} & the map. \\
+\hline
+{\em copy} & the map used to turn to the new state. \\
+\hline
+{\em mode} & 'T' for toroidal, 'P' for plane. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gol_8h_ab8f483697eadd23cf978dc414e160fc2}{\index{gol.\+h@{gol.\+h}!free\+\_\+map@{free\+\_\+map}}
+\index{free\+\_\+map@{free\+\_\+map}!gol.\+h@{gol.\+h}}
+\subsubsection[{free\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$$\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_ab8f483697eadd23cf978dc414e160fc2}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map to be freed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gol_8h_a1050aca280b8017e37f10dbe85860d8e}{\index{gol.\+h@{gol.\+h}!get\+\_\+alive\+\_\+neighbours@{get\+\_\+alive\+\_\+neighbours}}
+\index{get\+\_\+alive\+\_\+neighbours@{get\+\_\+alive\+\_\+neighbours}!gol.\+h@{gol.\+h}}
+\subsubsection[{get\+\_\+alive\+\_\+neighbours}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+alive\+\_\+neighbours (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m, }
+\item[{size\+\_\+t}]{line, }
+\item[{size\+\_\+t}]{column, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a1050aca280b8017e37f10dbe85860d8e}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. \\
+\hline
+{\em line} & the line of the cell. \\
+\hline
+{\em column} & the column of the cell. \\
+\hline
+{\em mode} & 'T' for toroidal, 'P' for plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of alive neighbours. Calculates the number of alive neighbours. 
+\end{DoxyReturn}
+\hypertarget{gol_8h_a60a2f24bfedcd1e76054ff020f9abdec}{\index{gol.\+h@{gol.\+h}!get\+\_\+neighbour@{get\+\_\+neighbour}}
+\index{get\+\_\+neighbour@{get\+\_\+neighbour}!gol.\+h@{gol.\+h}}
+\subsubsection[{get\+\_\+neighbour}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} get\+\_\+neighbour (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m, }
+\item[{size\+\_\+t}]{line, }
+\item[{size\+\_\+t}]{column, }
+\item[{enum {\bf direction}}]{d, }
+\item[{char}]{mode, }
+\item[{char $\ast$}]{error}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a60a2f24bfedcd1e76054ff020f9abdec}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. \\
+\hline
+{\em line} & the line of the cell. \\
+\hline
+{\em column} & the column of the cell. \\
+\hline
+{\em d} & the direction where to search for the neighbour. \\
+\hline
+{\em error} & the error string. \\
+\hline
+{\em mode} & 'T' for toroidal, 'P' for plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the specified neighbour is alive, false if he doesn't exist or he is dead. 
+\end{DoxyReturn}
+\hypertarget{gol_8h_a6b48c28e4bb20242a2e584575b133e54}{\index{gol.\+h@{gol.\+h}!get\+\_\+value@{get\+\_\+value}}
+\index{get\+\_\+value@{get\+\_\+value}!gol.\+h@{gol.\+h}}
+\subsubsection[{get\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} get\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m, }
+\item[{size\+\_\+t}]{line, }
+\item[{size\+\_\+t}]{column}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a6b48c28e4bb20242a2e584575b133e54}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map \\
+\hline
+{\em line} & the line of the cell \\
+\hline
+{\em column} & the column of the cell \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if alive, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{gol_8h_aa877fe183d5d6b1649f781a4061275fd}{\index{gol.\+h@{gol.\+h}!lives@{lives}}
+\index{lives@{lives}!gol.\+h@{gol.\+h}}
+\subsubsection[{lives}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} lives (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m, }
+\item[{size\+\_\+t}]{line, }
+\item[{size\+\_\+t}]{column, }
+\item[{char $\ast$}]{error, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_aa877fe183d5d6b1649f781a4061275fd}
+Used to determine whether a cell should live/die or born. 
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. \\
+\hline
+{\em line} & the line of the cell. \\
+\hline
+{\em column} & the column of the cell. \\
+\hline
+{\em error} & the error string. \\
+\hline
+{\em mode} & 'T' for toroidal, 'P' for plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cell would be alive, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{gol_8h_a496bcbd87542872bcf8e08640f746ac5}{\index{gol.\+h@{gol.\+h}!print\+\_\+map@{print\+\_\+map}}
+\index{print\+\_\+map@{print\+\_\+map}!gol.\+h@{gol.\+h}}
+\subsubsection[{print\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a496bcbd87542872bcf8e08640f746ac5}
+Prints the map from stdout. 
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gol_8h_af3e151e64fd4fff73d3520dc6935c2e1}{\index{gol.\+h@{gol.\+h}!read\+\_\+map@{read\+\_\+map}}
+\index{read\+\_\+map@{read\+\_\+map}!gol.\+h@{gol.\+h}}
+\subsubsection[{read\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}void read\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_af3e151e64fd4fff73d3520dc6935c2e1}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. Reads the map from stdin. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gol_8h_a69c5a3cc501b0d062024072bf6ff8071}{\index{gol.\+h@{gol.\+h}!set\+\_\+value@{set\+\_\+value}}
+\index{set\+\_\+value@{set\+\_\+value}!gol.\+h@{gol.\+h}}
+\subsubsection[{set\+\_\+value}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+value (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{m, }
+\item[{size\+\_\+t}]{line, }
+\item[{size\+\_\+t}]{column, }
+\item[{{\bf bool}}]{value}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a69c5a3cc501b0d062024072bf6ff8071}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map. \\
+\hline
+{\em line} & the line of the cell. \\
+\hline
+{\em column} & the column of the cell. \\
+\hline
+{\em value} & the value to be set. Sets a cell to a given value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gol_8h_a83e5f65006cb0c484b715a0958a9e71d}{\index{gol.\+h@{gol.\+h}!simulate@{simulate}}
+\index{simulate@{simulate}!gol.\+h@{gol.\+h}}
+\subsubsection[{simulate}]{\setlength{\rightskip}{0pt plus 5cm}void simulate (
+\begin{DoxyParamCaption}
+\item[{struct {\bf map} $\ast$}]{map, }
+\item[{struct {\bf map} $\ast$}]{copy, }
+\item[{size\+\_\+t}]{cycles, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{gol_8h_a83e5f65006cb0c484b715a0958a9e71d}
+Simulates the number of cycles using C\+G\+O\+L's rules. 
+\begin{DoxyParams}{Parameters}
+{\em map} & the map. \\
+\hline
+{\em copy} & the map used to turn to the new state. \\
+\hline
+{\em cycles} & the number of cyles to be run. \\
+\hline
+{\em mode} & 'T' for toroidal, 'P' for plane. \\
+\hline
+\end{DoxyParams}

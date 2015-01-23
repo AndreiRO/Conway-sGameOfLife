@@ -1,0 +1,250 @@
+\hypertarget{bitvector_8h}{\section{src/bitvector.h File Reference}
+\label{bitvector_8h}\index{src/bitvector.\+h@{src/bitvector.\+h}}
+}
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__bitvector}{\+\_\+bitvector}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{bitvector_8h_a36ad223be10ac0ff86ed1b72f2e7321d}{\#define \hyperlink{bitvector_8h_a36ad223be10ac0ff86ed1b72f2e7321d}{E\+X\+I\+T\+\_\+\+O\+N\+\_\+\+O\+O\+M}~1}\label{bitvector_8h_a36ad223be10ac0ff86ed1b72f2e7321d}
+
+\begin{DoxyCompactList}\small\item\em Exit on out of memory If there isn't enough memory to allocate the bitvector and E\+X\+I\+T\+\_\+\+O\+N\+\_\+\+O\+O\+M == 1, the program terminates, else it returns N\+U\+L\+L. \end{DoxyCompactList}\item 
+\#define \hyperlink{bitvector_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{true}~1
+\item 
+\#define \hyperlink{bitvector_8h_ae6c865df784842196d411c1466b01686}{false}~0
+\item 
+\#define \hyperlink{bitvector_8h_a86fd4404b140711fdb77326609c0f393}{B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E}~8
+\item 
+\#define \hyperlink{bitvector_8h_a8cc45a03b6c477bdc95942904a14553c}{B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}~1
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char \hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool}
+\item 
+typedef char \hyperlink{bitvector_8h_a82b52bf2b45e214a8f2100ebfdf1aee4}{byte}
+\item 
+typedef struct \hyperlink{struct__bitvector}{\+\_\+bitvector} $\ast$ \hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} \hyperlink{bitvector_8h_ac3dbd3fefcf040802112926dfbc13d2a}{b\+\_\+new} (size\+\_\+t bits)
+\item 
+void \hyperlink{bitvector_8h_acc3145f38034606c61627457fc870bbe}{b\+\_\+delete} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} $\ast$b)
+\item 
+void \hyperlink{bitvector_8h_aa4eb837aae6afc144226cee6cce5b81b}{b\+\_\+resize} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} $\ast$b, size\+\_\+t size)
+\item 
+void \hyperlink{bitvector_8h_ab4b2fffba6a25e33c540df7cc4f87440}{b\+\_\+copy} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, \hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} b)
+\item 
+void \hyperlink{bitvector_8h_ab18f7221f85675bbf89f1aa26c7367bc}{b\+\_\+set} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, size\+\_\+t index, \hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} value)
+\item 
+\hyperlink{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{bitvector_8h_ab948f44c648406cd7099b36cd1ae7c12}{b\+\_\+get} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, size\+\_\+t index)
+\item 
+\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} \hyperlink{bitvector_8h_a2081ceb5874bc038c38dfc645ba906a5}{b\+\_\+cmpl} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a)
+\item 
+\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} \hyperlink{bitvector_8h_a08b93884ad297a8b8ea35d0b6ee36e0d}{b\+\_\+or} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, \hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} b)
+\item 
+\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} \hyperlink{bitvector_8h_a303dbca347bacc37db7562b62e994c17}{b\+\_\+and} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, \hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} b)
+\item 
+\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} \hyperlink{bitvector_8h_a4a7b8f8416d2f0bef0c6f812908ef3ce}{b\+\_\+xor} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, \hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} b)
+\item 
+\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} \hyperlink{bitvector_8h_ad87d084c5b8693f8d2f2a6b305c958c4}{b\+\_\+diff} (\hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} a, \hyperlink{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{bitvector} b)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains all the necessary function declarations for a bitvector. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{bitvector_8h_a8cc45a03b6c477bdc95942904a14553c}{\index{bitvector.\+h@{bitvector.\+h}!B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y@{B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}}
+\index{B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y@{B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+I\+T\+V\+E\+C\+T\+O\+R\+\_\+\+O\+U\+T\+\_\+\+O\+F\+\_\+\+M\+E\+M\+O\+R\+Y~1}}\label{bitvector_8h_a8cc45a03b6c477bdc95942904a14553c}
+error code when no more memory is available. \hypertarget{bitvector_8h_a86fd4404b140711fdb77326609c0f393}{\index{bitvector.\+h@{bitvector.\+h}!B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E@{B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E}}
+\index{B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E@{B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\+Y\+T\+E\+\_\+\+S\+I\+Z\+E~8}}\label{bitvector_8h_a86fd4404b140711fdb77326609c0f393}
+a byte has 8 bits. \hypertarget{bitvector_8h_ae6c865df784842196d411c1466b01686}{\index{bitvector.\+h@{bitvector.\+h}!false@{false}}
+\index{false@{false}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{false}]{\setlength{\rightskip}{0pt plus 5cm}false~0}}\label{bitvector_8h_ae6c865df784842196d411c1466b01686}
+substitute false with 0 \hypertarget{bitvector_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}{\index{bitvector.\+h@{bitvector.\+h}!true@{true}}
+\index{true@{true}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{true}]{\setlength{\rightskip}{0pt plus 5cm}true~1}}\label{bitvector_8h_a1a24fc2eb8c1af6d06ac15bcec47f088}
+substitute true with 1 
+
+\subsection{Typedef Documentation}
+\hypertarget{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}{\index{bitvector.\+h@{bitvector.\+h}!bitvector@{bitvector}}
+\index{bitvector@{bitvector}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{bitvector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector}}}\label{bitvector_8h_a081cb20e110243e7e783b06c7bfce8a0}
+use struct \+\_\+bitvector$\ast$ easier. \hypertarget{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}{\index{bitvector.\+h@{bitvector.\+h}!bool@{bool}}
+\index{bool@{bool}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{bool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool}}}\label{bitvector_8h_af6a258d8f3ee5206d682d799316314b1}
+represent a bool variable, char is the smallest type. \hypertarget{bitvector_8h_a82b52bf2b45e214a8f2100ebfdf1aee4}{\index{bitvector.\+h@{bitvector.\+h}!byte@{byte}}
+\index{byte@{byte}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{byte}]{\setlength{\rightskip}{0pt plus 5cm}{\bf byte}}}\label{bitvector_8h_a82b52bf2b45e214a8f2100ebfdf1aee4}
+represent a byte variable, 
+
+\subsection{Function Documentation}
+\hypertarget{bitvector_8h_a303dbca347bacc37db7562b62e994c17}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+and@{b\+\_\+and}}
+\index{b\+\_\+and@{b\+\_\+and}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+and}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector} b\+\_\+and (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{{\bf bitvector}}]{b}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_a303dbca347bacc37db7562b62e994c17}
+Creates a bitvector whose value is that of a \& b (at bits level). 
+\begin{DoxyParams}{Parameters}
+{\em a} & is a bitvector. \\
+\hline
+{\em b} & is a bitvector \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_a2081ceb5874bc038c38dfc645ba906a5}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+cmpl@{b\+\_\+cmpl}}
+\index{b\+\_\+cmpl@{b\+\_\+cmpl}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+cmpl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector} b\+\_\+cmpl (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_a2081ceb5874bc038c38dfc645ba906a5}
+Creates a bitvector whose value is that of a complemented. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the bitvector to complement. \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_ab4b2fffba6a25e33c540df7cc4f87440}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+copy@{b\+\_\+copy}}
+\index{b\+\_\+copy@{b\+\_\+copy}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+copy}]{\setlength{\rightskip}{0pt plus 5cm}void b\+\_\+copy (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{{\bf bitvector}}]{b}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_ab4b2fffba6a25e33c540df7cc4f87440}
+copy the content of a to b 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the source \\
+\hline
+{\em b} & is the destination \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_acc3145f38034606c61627457fc870bbe}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+delete@{b\+\_\+delete}}
+\index{b\+\_\+delete@{b\+\_\+delete}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+delete}]{\setlength{\rightskip}{0pt plus 5cm}void b\+\_\+delete (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_acc3145f38034606c61627457fc870bbe}
+frees an allocated bitvector. \hypertarget{bitvector_8h_ad87d084c5b8693f8d2f2a6b305c958c4}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+diff@{b\+\_\+diff}}
+\index{b\+\_\+diff@{b\+\_\+diff}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+diff}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector} b\+\_\+diff (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{{\bf bitvector}}]{b}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_ad87d084c5b8693f8d2f2a6b305c958c4}
+Creates a bitvector whose value is that of a \textbackslash{} b (at bits level). 
+\begin{DoxyParams}{Parameters}
+{\em a} & is a bitvector. \\
+\hline
+{\em b} & is a bitvector \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_ab948f44c648406cd7099b36cd1ae7c12}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+get@{b\+\_\+get}}
+\index{b\+\_\+get@{b\+\_\+get}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} b\+\_\+get (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{size\+\_\+t}]{index}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_ab948f44c648406cd7099b36cd1ae7c12}
+Get the value of the specified bit. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the bitvector. \\
+\hline
+{\em index} & is the index of the bit. \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_ac3dbd3fefcf040802112926dfbc13d2a}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+new@{b\+\_\+new}}
+\index{b\+\_\+new@{b\+\_\+new}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+new}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector} b\+\_\+new (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{bits}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_ac3dbd3fefcf040802112926dfbc13d2a}
+Constructs a new bitvector with the given size; 
+\begin{DoxyParams}{Parameters}
+{\em bits} & the number of bits to store. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+L\+L if not enough memory, else a bitvector variable. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+if E\+X\+I\+T\+\_\+\+O\+N\+\_\+\+O\+O\+M is not redefined with the value 0, the program will exit if there isn't enough memory. Redefine with -\/\+D E\+X\+I\+T\+\_\+\+O\+N\+\_\+\+O\+O\+M=0 if necessary. 
+\end{DoxyWarning}
+\hypertarget{bitvector_8h_a08b93884ad297a8b8ea35d0b6ee36e0d}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+or@{b\+\_\+or}}
+\index{b\+\_\+or@{b\+\_\+or}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+or}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector} b\+\_\+or (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{{\bf bitvector}}]{b}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_a08b93884ad297a8b8ea35d0b6ee36e0d}
+Creates a bitvector whose value is that of a $\vert$ b (at bits level). 
+\begin{DoxyParams}{Parameters}
+{\em a} & is a bitvector. \\
+\hline
+{\em b} & is a bitvector \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_aa4eb837aae6afc144226cee6cce5b81b}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+resize@{b\+\_\+resize}}
+\index{b\+\_\+resize@{b\+\_\+resize}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+resize}]{\setlength{\rightskip}{0pt plus 5cm}void b\+\_\+resize (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector} $\ast$}]{b, }
+\item[{size\+\_\+t}]{size}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_aa4eb837aae6afc144226cee6cce5b81b}
+resize a bitvector to the given size. 
+\begin{DoxyParams}{Parameters}
+{\em b} & the bitvector to resize. \\
+\hline
+{\em size} & the number of bits to be. \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_ab18f7221f85675bbf89f1aa26c7367bc}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+set@{b\+\_\+set}}
+\index{b\+\_\+set@{b\+\_\+set}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+set}]{\setlength{\rightskip}{0pt plus 5cm}void b\+\_\+set (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{size\+\_\+t}]{index, }
+\item[{{\bf bool}}]{value}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_ab18f7221f85675bbf89f1aa26c7367bc}
+set the value in the bitvector, at the specifed index. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the bitvector. \\
+\hline
+{\em index} & is the index of the bit to be changed. \\
+\hline
+{\em value} & is the value to be put. \\
+\hline
+\end{DoxyParams}
+\hypertarget{bitvector_8h_a4a7b8f8416d2f0bef0c6f812908ef3ce}{\index{bitvector.\+h@{bitvector.\+h}!b\+\_\+xor@{b\+\_\+xor}}
+\index{b\+\_\+xor@{b\+\_\+xor}!bitvector.\+h@{bitvector.\+h}}
+\subsubsection[{b\+\_\+xor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf bitvector} b\+\_\+xor (
+\begin{DoxyParamCaption}
+\item[{{\bf bitvector}}]{a, }
+\item[{{\bf bitvector}}]{b}
+\end{DoxyParamCaption}
+)}}\label{bitvector_8h_a4a7b8f8416d2f0bef0c6f812908ef3ce}
+Creates a bitvector whose value is that of a $^\wedge$ b (at bits level). 
+\begin{DoxyParams}{Parameters}
+{\em a} & is a bitvector. \\
+\hline
+{\em b} & is a bitvector \\
+\hline
+\end{DoxyParams}
